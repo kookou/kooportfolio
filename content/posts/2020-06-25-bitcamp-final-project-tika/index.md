@@ -1,14 +1,27 @@
 ---
-title: My first post using Novela by Narative
+title: Bitcamp Final Project TIKA
 author: Park Hyejung
 date: 2020-06-26
-hero: ./images/hero.jpg
-excerpt: With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
+hero: ./images/hero.png
+excerpt: 프로젝트를 빠르고 간편하게 진행할 수 있게 하는 최적의 협업툴 TIKA
 ---
 
-My first post using `@narative/gatsby-theme-novela`. Novela is built by the team at [Narative](https://narative.co), and built for everyone that loves the web.
+# TIKA
+2020년 2월 중반 부터 5개월간 bitcamp 교육센터에서 교육을 받은 비전공자 5명이 한달여간 개발한 프로젝트.
 
-## Headers
+'TIKA' 는 티키타카 의 준 말로 팀원 간의 다양한 의사소통에 초점을 맞춘 협업툴 이다.
+회원은 TIKA 에 가입하여 그룹단위로 팀을 관리할 수 있으며 팀 안에서 채팅/게시판/칸반/TO-DO List 등을 활용하여 팀원과 소통할 수 있다.
+google 클라우드를 사용하여 파일을 공유 할 수도 있으며 캘린더를 활용한 일정 공유, 웹소켓이 적용된 실시간 그림판을 통해 의견을 공유할 수있다. 
+
+
+### 개발 환경
+JDK : jdk 1.8.0_16  
+DBMS : MySQL  
+WAS : Apache Tomcat v9.0  
+IDE : Spring Tool Suite 3.9.4.release  
+OS : Window 100 64bit  
+
+### 사용 기술
 
 # H1
 
