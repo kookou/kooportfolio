@@ -1,8 +1,8 @@
 name: Park Hyejung
 bio: |
-  내가 나와야 하는데
+  프론트엔드 엔지니어 | 웹 디자이너 | 머신러닝 엔지니어
 avatar: ./avatars/park-hyejung.jpg
 social:
-  - url: https://unsplash.com
-  - url: https://stackoverflow.com
-  - url: https://github.com
+  - url: https://github.com/kookou
+  - url: https://linkedin.com/in/kookou
+featured: true
