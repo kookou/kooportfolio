@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `portfolio`,
-    name: `Parkhyejung`,
+    title: `Park Hye jung`, // 사이트 탭 이름
+    name: `Park Hyejung`, // 푸터 이름 바뀜 
     siteUrl: `https://novela.narative.co`,
-    description: `박혜정 포트폴리오`,
+    description: `태그 검색용 중요하다고 한다`,
     hero: {
-      heading: `Park hyejung Portfolio`,
+      heading: `박혜정의 포트폴리오 입니다.`, // 첫페이지 메인 
       maxWidth: 652,
     },
     social: [
@@ -23,7 +23,7 @@ module.exports = {
       // },
       {
         name: `linkedin`,
-        url: `https://www.linkedin.com/in/kookou`,
+        url: `https://www.linkedin.com/company/narative/`,
       },
       // {
       //   name: `dribbble`,
@@ -48,7 +48,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `kookou`,
+        name: `Novela by Narative`,
         short_name: `Novela`,
         start_url: `/`,
         background_color: `#fff`,

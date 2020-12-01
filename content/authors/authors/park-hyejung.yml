@@ -1,12 +1,8 @@
 name: Park Hyejung
 bio: |
-  Written by You. This is where your author bio lives. Share your work, your
-  joys and of course, your Twitter handle.
-avatar: ./avatars/dennis-brotzky.jpg
+  내가 나와야 하는데
+avatar: ./avatars/park-hyejung.jpg
 social:
   - url: https://unsplash.com
   - url: https://stackoverflow.com
   - url: https://github.com
-  - url: https://github.com
-  - url: https://github.com
-featured: true
