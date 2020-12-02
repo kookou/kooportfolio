@@ -1,8 +1,8 @@
 ---
-title: Bitcamp Final Project TIKA
+title: Bitcamp Spring Boot Final Project 'TIKA'
 author: Park Hyejung
 date: 2020-06-26
-hero: ./images/hero.png
+hero: ./images/hero.jpg
 excerpt: 프로젝트를 빠르고 간편하게 진행할 수 있게 하는 최적의 협업툴 TIKA
 ---
 
@@ -22,6 +22,10 @@ IDE : Spring Tool Suite 3.9.4.release
 OS : Window 100 64bit  
 
 ### 사용 기술
+
+
+### 아쉬운 점
+칸반을 메인으로 프로젝트에 참여 했기 때문에 js를 주로 사용 하였는데 vanilla js보다 jquery를 더 많이 사용한점. 원래 6개월이었던 과정이 5개월로 줄어들어 시간적 여건이 부족한탓에 js를 충분히 공부하지 못하고 프로젝트를 진행했다. 더 빨리결과를 만들어 내기위해 jquery를 사용하였지만 이후 react를 접하고 vanilla js를 공부해야겠다는 생각이 들었다.
 
 # H1
 
