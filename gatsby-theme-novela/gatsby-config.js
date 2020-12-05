@@ -213,14 +213,14 @@ module.exports = ({
               withWebp: true,
             },
           },
-          {
-            resolve: `@raae/gatsby-remark-oembed`,
-            options: {
-              providers: {
-                include: ["Instagram"]
-              }
-            }
-          },
+          // {
+          //   resolve: `@raae/gatsby-remark-oembed`,
+          //   options: {
+          //     providers: {
+          //       include: ["Instagram"]
+          //     }
+          //   }
+          // },
           {
             resolve: "gatsby-remark-embed-video",
             options: {
