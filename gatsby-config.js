@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Park Hye jung`, // 사이트 탭 이름
     name: `Park Hyejung`, // 푸터 이름 바뀜 
-    siteUrl: `https://novela.narative.co`,
+    siteUrl: `https://kooportfolio.netlify.app`,
     description: `태그 검색용 중요하다고 한다`,
     hero: {
       heading: `박혜정의 포트폴리오 입니다.`, // 첫페이지 메인 
@@ -33,7 +33,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "@narative/gatsby-theme-novela",
+      resolve: "../gatsby-theme-novela",
       options: {
         contentPosts: "content/posts",
         contentAuthors: "content/authors",
