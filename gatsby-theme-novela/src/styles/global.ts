@@ -48,7 +48,12 @@ export const globalStyles = css`
     font-size: 0.625rem;
     line-height: 1.4;
   }
-
+  .css-14ye541-HeroHeading{
+    font-family:"GmarketSansMedium"
+  } 
+  .css-38xuv6-HeroHeading{
+    font-family:"GmarketSansMedium"
+  }
   body {
     font-family: "-apple-system", "BlinkMacSystemFont", "San Francisco",
       "Helvetica Neue", "Helvetica", "Ubuntu", "Roboto", "Noto", "Segoe UI",
