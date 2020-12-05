@@ -3,8 +3,8 @@ title: SBA React Machine Learning Project '오늘 뭐먹지?'
 author: Park Hyejung
 date: 2020-06-26
 hero: ./images/hero.jpg
-excerpt: 머신러닝을 활용한 개인화 추천 배달 웹서비스 오늘 뭐먹지?
----
+excerpt: 머신러닝을 활용한 개인화 추천 배달 웹서비스 오늘 뭐먹지??
+--- 
 
 # 오늘 뭐먹지?
 2020년 9월 부터 서울산업진흥원 에서 두달여간 진행한 머신러닝 딥러닝을 위한 AI전문가 양성 과정

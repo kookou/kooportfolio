@@ -16,7 +16,7 @@ const breakpoints = [
 const fonts = {
   serif: "'GmarketSansMedium'",
   sansSerif:
-    "'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif",
+    "'-apple-system','SF Pro Display', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif",
   monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
 };
 
@@ -24,7 +24,7 @@ const colorModeTransition =
   'background 0.25s var(--ease-in-out-quad), color 0.25s var(--ease-in-out-quad)';
 
 export default merge({
-  initialColorMode: 'light',
+  initialColorMode: 'dark',
   useCustomProperties: true,
   colorModeTransition,
   colors,

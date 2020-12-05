@@ -214,7 +214,7 @@ module.exports = ({
             },
           },
           {
-            resolve: `@raae/gatsby-remark-oembed`,
+            resolve: `gatsby-remark-oembed`,
             options: {
               providers: {
                 include: ["Instagram"]
