@@ -7,19 +7,19 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import { useColorMode } from 'theme-ui';
 
-import Anchor from '@components/Anchor';
-import Blockquote from '@components/Blockquote';
-import Code from '@components/Code';
-import Headings from '@components/Headings';
-import HorizontalRule from '@components/HorizontalRule';
-import Lists from '@components/Lists';
-import Paragraph from '@components/Paragraph';
-import Tables from '@components/Tables';
-import { ImageZoom } from '@components/Image';
-import Figcaption from '@components/Figcaption';
+import Anchor from '../Anchor';
+import Blockquote from '../Blockquote';
+import Code from '../Code';
+import Headings from '../Headings';
+import HorizontalRule from '../HorizontalRule';
+import Lists from '../Lists';
+import Paragraph from '../Paragraph';
+import Tables from '../Tables';
+import { ImageZoom } from '../Image';
+import Figcaption from '../Figcaption';
 import * as shortcodes from '@blocks/kit';
-import mediaqueries from '@styles/media';
-import { toKebabCase } from '@utils';
+import mediaqueries from '../../styles/media';
+import { toKebabCase } from '../../utils';
 
 const components = {
   ...shortcodes,
