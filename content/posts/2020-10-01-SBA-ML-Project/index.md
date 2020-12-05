@@ -7,11 +7,14 @@ excerpt: 머신러닝을 활용한 개인화 추천 배달 웹서비스 오늘 �
 ---
 # 오늘 뭐먹지?
 2020년 9월 부터 서울산업진흥원 에서 두달여간 진행한 머신러닝 딥러닝을 위한 AI전문가 양성 과정
-중 한달간 개발한 프로젝트
+중 4명이 한달간 개발한 프로젝트  
+__본인 참여 :__  UI / 리뷰 / 오더 / 검색형챗봇 /  
 
 배달 음식도 영화 처럼 내 취향을 분석해서 추천해줄순 없을까? 라는 생각에서 시작된
 머신러닝 프로젝트 '오늘 뭐먹지?'는 요기요 오픈 api를 활용하여 제작된 배달 웹서비스 이다.  
 개인화된 __<span style="color:#00BFFF">추천시스템(기 사용자의 평점분석)</span>__ 과 __<span style="color:#00BFFF">챗봇(키워드 분석)</span>__ 을 탑제하여 보다 만족도 높은 배달서비스를 제공한다. 
+
+
 
 
 <!-- ### 개발 환경
@@ -135,7 +138,7 @@ __두번째 메뉴 리스트__ : 아이템 기반 유사도를 분석하여 로�
   />
 </div>
 
-챗봇 아이콘을 클릭하면 어떤 페이지에서도 사용 채팅 가능
+챗봇 아이콘을 클릭하면 어떤 페이지에서도 채팅 가능
 
 <div className="Image__Medium">
   <img
@@ -200,7 +203,7 @@ __유저데이터__
 위치별 가게정보/주문정보/리뷰내용 등이 우리에게 필요한 데이터 였기에 해당 정보로 웹서비스를 하고있는 요기요를 크롤링 하여 데이터셋을 확보 하였다.  
 
 하지만 요기요에서도 개인정보는 제공해주지 않으므로 한정된 정보와(리뷰를 남긴 사용자 아이디 앞 2자리) 위치 정보를(매장의 위,경도) 결합하여 사용자 데이터 가공을 진행하였다.  
-리뷰 데이터의 사용자 아이디를 매장반경1km 내로 잘라 한사람이라 가정하여 주문내역을 가진 사용자 11366명을 만들어낼수 있었다.
+리뷰 데이터의 사용자 아이디를 매장반경1km 내로 잘라 한사람이라 가정하여 주문내역을 가진 사용자 11366명을 만들어낼수 있었다.(강남구,서초구 한정)
 ##### 요기요 사이트 크롤링 자동화 [(taepd)](https://github.com/taepd)
 ```python
 class YogiyoCrawler:
@@ -304,89 +307,6 @@ for idx in range(5, 6):
 
 
 ### 챗봇
-__자연어__
+__자연어__  
 챗봇을 제작 하기전 필요한것 역시 데이터셋 이었는데 챗봇을 위한 QnA 형태의 데이터셋은 몇가지 존재 했지만 우리에게 필요한건 음식점에 대한 데이터였다. 마침 AI Hub에서 [소상공인 및 공공민원 분야에 대한](https://aihub.or.kr/aidata/85) 데이터셋을 제공하고 있었지만 역시나 음식점에 데이터는 부족했다. 
 
-
-## Links
-
-[I'm an inline-style link](https://www.google.com)
-
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-
-[I'm a reference-style link][arbitrary case-insensitive reference text]
-
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
-
-[You can use numbers for reference-style link definitions][1]
-
-Or leave it empty and use the [link text itself].
-
-URLs and URLs in angle brackets will automatically get turned into links.
-http://www.example.com or <http://www.example.com> and sometimes
-example.com (but not on Github, for example).
-
-Some text to show that the reference links can follow later.
-
-[arbitrary case-insensitive reference text]: https://www.mozilla.org
-[1]: http://slashdot.org
-[link text itself]: http://www.reddit.com
-
-## Images
-
-<div className="Image__Small">
-  <img
-    src="./images/article-image-2.jpg"
-    title="Logo Title Text 1"
-    alt="Alt text"
-  />
-</div>
-
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-
-## Code and Syntax Highlighting
-
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
-
-```
-No language indicated, so no syntax highlighting.
-But let's throw in a <b>tag</b>.
-```
-
-### JSX
-
-```jsx
-import React from "react";
-import { ThemeProvider } from "theme-ui";
-import theme from "./theme";
-
-export default props => (
-  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
-);
-```
-
-## Blockquotes
-
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.
-
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
-
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-
-## Horizontal Rule
-
-Horizontal Rule
-
-Three or more...
-
----
-
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
-
----
-
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
