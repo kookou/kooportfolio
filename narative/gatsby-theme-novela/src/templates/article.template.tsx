@@ -3,14 +3,14 @@ import styled from "@emotion/styled";
 import throttle from "lodash/throttle";
 import { graphql, useStaticQuery } from "gatsby";
 
-import Layout from "@components/Layout";
-import MDXRenderer from "@components/MDX";
-import Progress from "@components/Progress";
-import Section from "@components/Section";
-import Subscription from "@components/Subscription";
+import Layout from "../components/Layout";
+import MDXRenderer from "../components/MDX";
+import Progress from "../components/Progress";
+import Section from "../components/Section";
+import Subscription from "../components/Subscription";
 
-import mediaqueries from "@styles/media";
-import { debounce } from "@utils";
+import mediaqueries from "../styles/media";
+import { debounce } from "../utils";
 
 import ArticleAside from "../sections/article/Article.Aside";
 import ArticleHero from "../sections/article/Article.Hero";
@@ -20,7 +20,7 @@ import ArticleSEO from "../sections/article/Article.SEO";
 import ArticleShare from "../sections/article/Article.Share";
 import ArticleFooter from './article.footer.template';
 
-import { Template } from "@types";
+import { Template } from "../types";
 
 const siteQuery = graphql`
   {
