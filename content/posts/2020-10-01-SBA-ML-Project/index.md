@@ -199,6 +199,8 @@ __두번째 메뉴 리스트__ : 아이템 기반 유사도를 분석하여 로�
 
 
 ## 구현
+
+### BackEnd
 __유저데이터__  
 배달 서비스를 구현 하기로 결정한뒤 머신러닝을 위한 데이터 셋을 구해야했다.  SK telecom 에서 제공하는 [배달음식점 음성 통화 데이터](https://www.bigdatahub.co.kr/product/view.do?pid=1002333)와 공공데이터 포탈에서 제공하는 [서울시 음식점 현황](https://www.data.go.kr/data/15035759/fileData.do) 데이터 셋을 구할 수 있었지만, 러닝에 활용할 수도 없었고 웹을 구성할 수도 없는 데이터였다.  
 위치별 가게정보/주문정보/리뷰내용 등이 우리에게 필요한 데이터 였기에 해당 정보로 웹서비스를 하고있는 요기요를 크롤링 하여 데이터셋을 확보 하였다.  
@@ -310,5 +312,143 @@ for idx in range(5, 6):
 ### 챗봇
 __자연어__  
 챗봇을 제작 하기전 필요한것 역시 데이터셋 이었는데 챗봇을 위한 QnA 형태의 데이터셋은 몇가지 존재 했지만 우리에게 필요한건 음식점에 대한 데이터였다. 마침 AI Hub에서 제공하고 있는 [소상공인 및 공공민원 분야에 대한](https://aihub.or.kr/aidata/85) 데이터셋이 음식점데이터를 포함하고 있었다.
-해당 데이터셋을 가지고 초기 생성 챗봇을 구성하였으나 결과는 엉망이었다. 데이터셋이 우리가 원하던 대화의 형식과 맞지 않는 부분도 있었고 원하는 흐름으로 이어갈수도 없었다.
-그래서 검색 기반 챗봇 모델로 키워드만 추출하여 원하는 응답을 사용할수 있도록 하였다.
+해당 데이터셋을 가지고 초기 생성 챗봇을 구성하였으나 결과는 엉망이었다. 데이터셋이 우리가 원하던 대화의 형식과 맞지 않는 부분도 있었고 원하는 흐름으로 이어갈수도 없었다.  
+그래서 검색 기반 챗봇 모델로 키워드만 추출하여 원하는 응답을 할수 있도록 하였다. 이 과정에서 기존에 사용하였던 질의응답 데이터셋 보단 의도를 분류할 수 있는 데이터셋이 필요하였다. 이에 원하는 entity를 사전형태로 구성한뒤 '추천', '주문', '인사', '언제' 4가지 의도에 따라 entity별 n by n개의 수로 정제된 list를 만들어 데이터셋으로 활용하였다.  
+```csv
+label,data
+0,중식 메뉴
+0,커피 메뉴
+...
+1,피자 배달
+1,햄버거 배달
+...
+2,반가워 안녕
+2,챗봇 안녕
+...
+3,점심 뭐 먹지
+3,저녁에 뭐 먹을까
+```
+형태소 분석으론 komoran을 사용 하였다.
+의도(label), 와 생성한 문장 (data) 로 이루어진 csv 파일을 부러와 각각 x_data, y_data 로 사용하였다.
+TfidfVectorizer로 단어에 가중치를 부여, 핵심 키워드를 추출하여 단어사전을 제작 하고 MultinomialNB 를 사용하여 학습하였다.
+
+``` python
+
+##########데이터 전처리
+...
+# 텍스트 정제 (특수기호 제거)
+for i, text in enumerate(x_data):
+    text = re.sub(r'[^ ㄱ-ㅣ가-힣]', '', text) #특수기호 제거, 정규 표현식
+    x_data[i] = text
+...
+
+#텍스트 정제 (어간 추출)
+for i, text in enumerate(x_data):
+    clean_words = komoran.nouns(text) 
+    text = ' '.join(clean_words)
+    x_data[i] = text
+...
+
+#단어 카운트 (가중치 부여)
+transformer = TfidfVectorizer()
+transformer.fit(x_data)
+x_data = transformer.transform(x_data)
+
+x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size=0.3, random_state=777, stratify=y_data)
+
+##########모델 생성
+model = MultinomialNB(alpha=1.0)
+
+##########모델 학습
+model.fit(x_train, y_train)
+
+```
+이후 사용자에게 입력받은 문장을 전처리를 통해 검색 키워드를 뽑아내고 학습이 완료 된 모델을 거쳐 의도를 분류 하였다.
+
+``` python
+
+def process_nb(text):
+
+    ##########검색어 추출
+    get_data_list = [text][0]
+    morpphed_text = komoran.pos(get_data_list)
+
+        tagged_text = ''
+    for pos_tags in morpphed_text:
+        if (pos_tags[1] in ['NNG','MAG', 'NNP','SL'] and len(pos_tags[0]) > 1): #Check only Noun
+            feature_value = pos_tags[0]
+            tagged_text = tagged_text + pos_tags[0] + ' '
+
+    word = tagged_text.split(' ')
+    word = word[0]
+    print('검색어 추출',word)
+
+    ##########모델
+    x_data = np.array([ text ])
+
+    #텍스트 정제 (어간 추출)
+    for i, text in enumerate(x_data):
+        clean_words = komoran.nouns(text) 
+        text = ' '.join(clean_words)
+        x_data[i] = text
+
+    x_data = transformer.transform(x_data)
+    y_predict = model.predict(x_data)
+    text = labels[y_predict[0]]
+
+    if text == '추천':
+        return text, word
+    elif text == '인사':
+         return text, word
+    elif text == '주문':
+        return text, word
+    elif text == '언제':
+        return text, word
+    elif x_data =='':
+        text = 'none'
+        return text
+
+```
+
+### FrontEnd
+__React__
+React Hook 을 활용하여 함수형 컴포넌트로 구성하였다.
+사이트의 템플릿은 [MATERIAL-UI](https://material-ui.com/)를 이용하였다.
+
+
+챗봇 UI는 처음에 [React Simple Chatbot](https://lucasbassetti.com.br/react-simple-chatbot/#/docs/form)로 작업 하였으나, step(순서)이 한번 구성되고 나면 바뀌지 않는다는 Simple Chatbot의 특성때문에 의도에 따라 움직여야 하는 챗봇을 구성할 수가 없었다.  그래서 [React-chatbot-kit](https://fredrikoseberg.github.io/react-chatbot-kit-docs/) 이라는 노르웨이의 개발자가 만든지 2달밖에 되지 않은 kit를 사용하게 되었다.
+MessageParser / ActionProvider / config 로 구성 되어 있으며 각각 아래와 같은 작업을 한다.
+- config : 챗봇의 구성 가능한 모든 요소를 ​​제어  
+- MessageParser : 사용자가 메시지를 보낼 때 발생하는 일을 제어
+- ActionProvider : 챗봇이 수행 할 작업의 종류를 제어
+
+``` js
+
+// MessageParser.jsx
+// 의도에 따른 메세지 출력
+parse(message) {
+    console.log(message)
+    let lowercase = message
+    let key = ''
+    const userid = sessionStorage.getItem("sessionUser");
+    axios.get(`http://localhost:8080/chatbot/${lowercase}`)
+      .then(res => {
+        key = res.data[1]
+
+        if (res.data[1].includes("추천")) {
+          this.actionProvider.recommendSearchBotMessage(res.data[2], res.data[0][0], userid);
+        }
+        if (res.data[1].includes("주문")) {
+          this.actionProvider.orderBotMessage(res.data);
+        }
+        if (res.data[1].includes("인사")) {
+          if (userid != null) {
+            this.actionProvider.greetingLoginUserBotMessage(userid);
+          } else {
+            this.actionProvider.greetingBotMessage();
+          }
+        }
+        if (res.data[1].includes("언제")) {
+          this.actionProvider.recommendBotMessage();
+        }
+```
