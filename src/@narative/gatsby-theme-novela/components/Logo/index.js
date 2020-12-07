@@ -1,7 +1,7 @@
 import  React  from  'react' ; // ** * SVG 로고를 붙여넣고이 구성 요소에서 반환합니다. * 로고의 높이를 설정했는지 확인하세요. * 높이는 25-35px 이내로 유지하는 것이 좋습니다. * / 
 // import { Icon } from '@types';
 // const Logo: Icon = ({ fill = "white" }) => {
-const Logo = ({ fill = "white" }) =>  {
+export default function Logo () {
    
     return ( 
     <svg
@@ -25,4 +25,4 @@ const Logo = ({ fill = "white" }) =>  {
 }
 // }
 
-export default Logo;
+// export default Logo;
