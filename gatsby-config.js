@@ -39,6 +39,7 @@ module.exports = {
         contentAuthors: "content/authors",
         basePath: "/",
         authorsPage: true,
+        mailchimp: true, // make sure this is true!
         sources: {
           local: true,
           // contentful: true,
@@ -60,6 +61,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: '', // add your MC list endpoint here; see plugin repo for instructions
       },
     },
   ],
