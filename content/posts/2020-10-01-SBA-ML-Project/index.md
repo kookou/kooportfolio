@@ -9,7 +9,7 @@ excerpt: 머신러닝을 활용한 개인화 추천 배달 웹서비스 오늘 �
 # 오늘 뭐먹지?
 2020년 9월 부터 서울산업진흥원 에서 두달여간 진행한 머신러닝 딥러닝을 위한 AI전문가 양성 과정
 중 4명이 한달간 개발한 프로젝트  
-__본인 참여 :__  UI / 리뷰 / 오더 / 검색형챗봇 /  
+__본인 참여 :__  UI / 리뷰 / 오더 / 검색형 챗봇  
 
 배달 음식도 영화 처럼 내 취향을 분석해서 추천해줄순 없을까? 라는 생각에서 시작된
 머신러닝 프로젝트 '오늘 뭐먹지?'는 요기요 오픈 api를 활용하여 제작된 배달 웹서비스 이다.  
@@ -411,44 +411,18 @@ def process_nb(text):
 ```
 
 ### FrontEnd
-__React__
-React Hook 을 활용하여 함수형 컴포넌트로 구성하였다.
+__React__  
+React Hook 을 활용하여 함수형 컴포넌트로 구성하였다.  
 사이트의 템플릿은 [MATERIAL-UI](https://material-ui.com/)를 이용하였다.
 
 
-챗봇 UI는 처음에 [React Simple Chatbot](https://lucasbassetti.com.br/react-simple-chatbot/#/docs/form)로 작업 하였으나, step(순서)이 한번 구성되고 나면 바뀌지 않는다는 Simple Chatbot의 특성때문에 의도에 따라 움직여야 하는 챗봇을 구성할 수가 없었다.  그래서 [React-chatbot-kit](https://fredrikoseberg.github.io/react-chatbot-kit-docs/) 이라는 노르웨이의 개발자가 만든지 2달밖에 되지 않은 kit를 사용하게 되었다.
+챗봇의 UI는 처음에 [React Simple Chatbot](https://lucasbassetti.com.br/react-simple-chatbot/#/docs/form)로 작업 하였으나, step(순서)이 한번 구성되고 나면 바뀌지 않는다는 Simple Chatbot의 특성때문에 의도에 따라 움직여야 하는 챗봇을 구성할 수가 없었다.  그래서 [React-chatbot-kit](https://fredrikoseberg.github.io/react-chatbot-kit-docs/) 이라는 노르웨이의 개발자가 만든지 2달밖에 되지 않은 kit를 사용하게 되었다.  
 MessageParser / ActionProvider / config 로 구성 되어 있으며 각각 아래와 같은 작업을 한다.
 - config : 챗봇의 구성 가능한 모든 요소를 ​​제어  
 - MessageParser : 사용자가 메시지를 보낼 때 발생하는 일을 제어
 - ActionProvider : 챗봇이 수행 할 작업의 종류를 제어
 
-``` js
-
-// MessageParser.jsx
-// 의도에 따른 메세지 출력
-parse(message) {
-    console.log(message)
-    let lowercase = message
-    let key = ''
-    const userid = sessionStorage.getItem("sessionUser");
-    axios.get(`http://localhost:8080/chatbot/${lowercase}`)
-      .then(res => {
-        key = res.data[1]
-
-        if (res.data[1].includes("추천")) {
-          this.actionProvider.recommendSearchBotMessage(res.data[2], res.data[0][0], userid);
-        }
-        if (res.data[1].includes("주문")) {
-          this.actionProvider.orderBotMessage(res.data);
-        }
-        if (res.data[1].includes("인사")) {
-          if (userid != null) {
-            this.actionProvider.greetingLoginUserBotMessage(userid);
-          } else {
-            this.actionProvider.greetingBotMessage();
-          }
-        }
-        if (res.data[1].includes("언제")) {
-          this.actionProvider.recommendBotMessage();
-        }
-```
+## 프로젝트를 끝낸 후
+2달여 라는 짧은 수업기간에 python 부터 react 까지 기초부터 시작해 프로젝트 하나를 끝내야 한다는 큰 걱정을 가지고 시작했었다. 
+게다가 코로나로 인해 비대면 수업을 진행하면서 의사소통 면에서도 문제가 있었다.
+react는 프로젝트를 진행하면서 공부하며 사용했는데 공식문서 참고와 구글링으로 어떻게든 해내는 자신을 보며 앞으로 새로운 언어를 공부하는 것에 대한 자신감이 생겼다. 
