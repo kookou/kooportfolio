@@ -32,6 +32,7 @@ OS : Window 100 64bit
     alt="Alt text"
   />
 </div>
+
 <div className="Image__Small">
   <img
     src="./images/03.jpg"
@@ -49,6 +50,7 @@ OS : Window 100 64bit
     alt="Alt text"
   />
 </div>
+
 <div className="Image__Small">
   <img
     src="./images/05.jpg"
@@ -56,6 +58,7 @@ OS : Window 100 64bit
     alt="Alt text"
   />
 </div>
+
 <div className="Image__Small">
   <img
     src="./images/01.jpg"
@@ -75,6 +78,7 @@ OS : Window 100 64bit
     alt="Alt text"
   />
 </div>
+
 <div className="Image__Small">
   <img
     src="./images/07.jpg"
@@ -82,6 +86,7 @@ OS : Window 100 64bit
     alt="Alt text"
   />
 </div>
+
 <div className="Image__Small">
   <img
     src="./images/08.jpg"
@@ -100,6 +105,7 @@ OS : Window 100 64bit
 </div>
 
 __Main 화면__ Chart js 를 적용하여 팀&프로젝트 상황을 한 눈에 알수 있으며 Timeline의 link 를 통해 높은 가시성과 접근성을 높였다.
+
 <div className="Image__Small">
   <img
     src="./images/10.jpg"
@@ -127,6 +133,7 @@ __일반 게시판__
     alt="Alt text"
   />
 </div>
+
 <div className="Image__Medium">
   <img
     src="./images/kanbanfile.gif"
@@ -142,6 +149,7 @@ __일반 게시판__
     alt="Alt text"
   />
 </div>
+
 #### Full Calendar 
 
 <div className="Image__Small">
@@ -154,6 +162,7 @@ __일반 게시판__
 
 #### To-do List
 vue js 이용
+
 <div className="Image__Medium">
   <img
     src="./images/13.jpg"
@@ -194,9 +203,6 @@ vue js 이용
     alt="Alt text"
   />
 </div>
-
-
-
 
 ### 사용 기술
 
