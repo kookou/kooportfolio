@@ -156,7 +156,7 @@ __두번째 메뉴 리스트__ : 아이템 기반 유사도를 분석하여 로�
 - Font  
 <div className="Image__Medium">
   <img
-    src="./images/front.png"
+    src="./images/front.jpg"
     title="netflix"
     alt="Alt text"
   />
@@ -164,7 +164,7 @@ __두번째 메뉴 리스트__ : 아이템 기반 유사도를 분석하여 로�
 - Back
 <div className="Image__Medium">
   <img
-    src="./images/back.png"
+    src="./images/back.jpg"
     title="netflix"
     alt="Alt text"
   />
@@ -172,7 +172,7 @@ __두번째 메뉴 리스트__ : 아이템 기반 유사도를 분석하여 로�
 - Machine Learning
 <div className="Image__Medium">
   <img
-    src="./images/ml.png"
+    src="./images/ML.jpg"
     title="netflix"
     alt="Alt text"
   />
@@ -180,7 +180,7 @@ __두번째 메뉴 리스트__ : 아이템 기반 유사도를 분석하여 로�
 - Toolkit & Cooperation
 <div className="Image__Medium">
   <img
-    src="./images/kit.png"
+    src="./images/toolkit.jpg"
     title="netflix"
     alt="Alt text"
   />

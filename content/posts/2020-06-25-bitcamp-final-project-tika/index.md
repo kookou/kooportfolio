@@ -23,6 +23,179 @@ IDE : Spring Tool Suite 3.9.4.release
 OS : Window 100 64bit  
 
 ## 기능
+#### 회원가입 / 로그인
+
+<div className="Image__Small">
+  <img
+    src="./images/02_3.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+<div className="Image__Small">
+  <img
+    src="./images/03.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+
+이메일 인증을 통한 회원가입
+
+<div className="Image__Small">
+  <img
+    src="./images/04.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+<div className="Image__Small">
+  <img
+    src="./images/05.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+<div className="Image__Small">
+  <img
+    src="./images/01.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>  
+
+로그인 화면에서 소셜 로그인, 회원가입 가능
+
+
+#### Team 관리
+<div className="Image__Small">
+  <img
+    src="./images/06.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+<div className="Image__Small">
+  <img
+    src="./images/07.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+<div className="Image__Small">
+  <img
+    src="./images/08.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+
+#### Team Page
+<div className="Image__Small">
+  <img
+    src="./images/09.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+
+__Main 화면__ Chart js 를 적용하여 팀&프로젝트 상황을 한 눈에 알수 있으며 Timeline의 link 를 통해 높은 가시성과 접근성을 높였다.
+<div className="Image__Small">
+  <img
+    src="./images/10.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+
+__일반 게시판__
+
+<div className="Image__Small">
+  <img
+    src="./images/11.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+
+#### KANBAN
+
+<div className="Image__Medium">
+  <img
+    src="./images/kanban.gif"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+<div className="Image__Medium">
+  <img
+    src="./images/kanbanfile.gif"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+
+<div className="Image__Small">
+  <img
+    src="./images/12_1.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+#### Full Calendar 
+
+<div className="Image__Small">
+  <img
+    src="./images/14.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+
+#### To-do List
+vue js 이용
+<div className="Image__Medium">
+  <img
+    src="./images/13.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+
+#### 그림판
+웹소켓 이용
+
+<div className="Image__Small">
+  <img
+    src="./images/14.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+
+#### google cloud
+웹소켓 이용
+
+<div className="Image__Small">
+  <img
+    src="./images/14.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+
+#### Chat
+웹소켓 이용
+
+<div className="Image__Small">
+  <img
+    src="./images/14.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+
+
 
 
 ### 사용 기술
@@ -30,7 +203,7 @@ OS : Window 100 64bit
 - Font  
 <div className="Image__Medium">
   <img
-    src="./images/front.png"
+    src="./images/front.jpg"
     title="netflix"
     alt="Alt text"
   />
@@ -38,7 +211,7 @@ OS : Window 100 64bit
 - Back
 <div className="Image__Medium">
   <img
-    src="./images/back.png"
+    src="./images/back.jpg"
     title="netflix"
     alt="Alt text"
   />
@@ -46,7 +219,7 @@ OS : Window 100 64bit
 - API
 <div className="Image__Medium">
   <img
-    src="./images/ml.png"
+    src="./images/api.jpg"
     title="netflix"
     alt="Alt text"
   />
@@ -54,7 +227,7 @@ OS : Window 100 64bit
 - Toolkit & Cooperation
 <div className="Image__Medium">
   <img
-    src="./images/kit.png"
+    src="./images/toolkit.jpg"
     title="netflix"
     alt="Alt text"
   />
