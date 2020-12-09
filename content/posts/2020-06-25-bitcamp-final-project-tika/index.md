@@ -22,6 +22,15 @@ WAS : Apache Tomcat v9.0
 IDE : Spring Tool Suite 3.9.4.release  
 OS : Window 100 64bit  
 
+
+<div className="Image__Small">
+  <img
+    src="./images/homefull.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+
 ## 기능
 #### 회원가입 / 로그인
 - 이메일 인증을 통한 회원가입
