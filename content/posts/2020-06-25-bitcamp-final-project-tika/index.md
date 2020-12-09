@@ -24,6 +24,8 @@ OS : Window 100 64bit
 
 ## 기능
 #### 회원가입 / 로그인
+- 이메일 인증을 통한 회원가입
+- 로그인 화면에서 소셜 로그인, 회원가입 가능
 
 <div className="Image__Small">
   <img
@@ -40,8 +42,6 @@ OS : Window 100 64bit
     alt="Alt text"
   />
 </div>
-
-이메일 인증을 통한 회원가입
 
 <div className="Image__Small">
   <img
@@ -61,41 +61,33 @@ OS : Window 100 64bit
 
 <div className="Image__Small">
   <img
-    src="./images/01.jpg"
+    src="./images/02_4.jpg"
     title="netflix"
     alt="Alt text"
   />
 </div>  
 
-로그인 화면에서 소셜 로그인, 회원가입 가능
+
 
 
 #### Team 관리
+- 새로운팀 생성 (초기생성자가 팀 리더)
+- 사용자가 속해있는 팀 그룹 기능 제공, Drag&Drop 으로 그룹 관리
+- 팀명 / 팀 참여 사용자 프로필 제공
+
 <div className="Image__Small">
   <img
-    src="./images/06.jpg"
+    src="./images/teamcreate.gif"
     title="netflix"
     alt="Alt text"
   />
 </div>
 
-<div className="Image__Small">
-  <img
-    src="./images/07.jpg"
-    title="netflix"
-    alt="Alt text"
-  />
-</div>
+#### Team Main
 
-<div className="Image__Small">
-  <img
-    src="./images/08.jpg"
-    title="netflix"
-    alt="Alt text"
-  />
-</div>
+- Chart js 를 적용하여 팀&프로젝트 상황을 차트로 표현
+- mysql 의 trigger 를 통해 타임라인을 구성, link 를 통해 해당 게시글로 이동 가능
 
-#### Team Page
 <div className="Image__Small">
   <img
     src="./images/09.jpg"
@@ -104,7 +96,26 @@ OS : Window 100 64bit
   />
 </div>
 
-__Main 화면__ Chart js 를 적용하여 팀&프로젝트 상황을 한 눈에 알수 있으며 Timeline의 link 를 통해 높은 가시성과 접근성을 높였다.
+#### Side Menu
+- 팀원초대 : Autocomplete 를 통하여 가입된 회원 ID(db에 저장된) 자동 완성 
+- 게시판 생성 : 일반게시판/칸반게시판 선택하려 게시판 생성
+- 팀 탈퇴 : 팀 탈퇴시 팀 리더의 경우 리더권한을 팀내 멤버에게 양도한뒤 탈퇴. 리더가 아닐경우 일반 탈퇴
+
+<div className="Image__Small">
+  <img
+    src="./images/sidebar.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+
+
+
+
+#### 일반 게시판
+
+- Datatable 을 통해 게시판의 페이징/검색 구현  
+- 공지사항 등록 기능, 답글 작성 기능
 
 <div className="Image__Small">
   <img
@@ -114,7 +125,18 @@ __Main 화면__ Chart js 를 적용하여 팀&프로젝트 상황을 한 눈에 
   />
 </div>
 
-__일반 게시판__
+- Summernote editer 사용히여 게시글 작성, 이미지 미리보기 구현
+- Multipart를 이용한 파일 업로드 구현
+
+<div className="Image__Small">
+  <img
+    src="./images/10_1.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+
+- 댓글 등록, 수정, 삭제 비동기 처리  
 
 <div className="Image__Small">
   <img
@@ -124,7 +146,11 @@ __일반 게시판__
   />
 </div>
 
+
+
 #### KANBAN
+
+Jquery 를 이용한 Kanban Board 
 
 <div className="Image__Medium">
   <img
@@ -134,6 +160,10 @@ __일반 게시판__
   />
 </div>
 
+- Sortable UI를 이용하여 Drag&Drop 구현  
+- 리스트 추가/수정/삭제 비동기 처리  
+- 리스트내 카드 추가/수정/삭제 비동기 처리  
+
 <div className="Image__Medium">
   <img
     src="./images/kanbanfile.gif"
@@ -142,26 +172,37 @@ __일반 게시판__
   />
 </div>
 
-<div className="Image__Small">
+- 카드 Detail 모달을 사용하여 구현
+- Multipart 를 이용하여 다중파일 업로드 구현 
+
+
+<div className="Image__Medium">
   <img
-    src="./images/12_1.jpg"
+    src="./images/kanbanreply.gif"
     title="netflix"
     alt="Alt text"
   />
 </div>
+
+- 댓글 등록/수정/삭제 비동기 처리
+
 
 #### Full Calendar 
 
-<div className="Image__Small">
+<div className="Image__Medium">
   <img
-    src="./images/14.jpg"
+    src="./images/fullcalendar.gif"
     title="netflix"
     alt="Alt text"
   />
 </div>
 
+일정 등록/수정/삭제 비동기 처리  
+드래그앤드랍/ 리사이즈시 일정 자동 수정 비동기 처리
+
+
 #### To-do List
-vue js 이용
+Vue js 로 구현 
 
 <div className="Image__Medium">
   <img
@@ -171,19 +212,11 @@ vue js 이용
   />
 </div>
 
+all /active/done 탭으로 구분  
+Todo list 추가/삭제 비동기 처리   
+
 #### 그림판
-웹소켓 이용
-
-<div className="Image__Small">
-  <img
-    src="./images/14.jpg"
-    title="netflix"
-    alt="Alt text"
-  />
-</div>
-
-#### google cloud
-웹소켓 이용
+Websocket을 이용한 팀별 실시간 드로잉
 
 <div className="Image__Small">
   <img
@@ -194,15 +227,30 @@ vue js 이용
 </div>
 
 #### Chat
-웹소켓 이용
+Bootstrap Popover로 채팅 UI 구현  
+Websocket을 이용한 팀별 실시간 채팅
 
-<div className="Image__Small">
+<div className="Image__Medium">
   <img
-    src="./images/14.jpg"
+    src="./images/chat.gif"
     title="netflix"
     alt="Alt text"
   />
 </div>
+
+#### google cloud
+
+일반 / Kanban 게시판 에서 이루어지는 파일 업로드, 삭제 모두 google cloud 와 연동
+
+<div className="Image__Small">
+  <img
+    src="./images/15.jpg"
+    title="netflix"
+    alt="Alt text"
+  />
+</div>
+
+
 
 ### 사용 기술
 
